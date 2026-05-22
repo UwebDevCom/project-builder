@@ -1,0 +1,10 @@
+{
+  "name": "project-builder",
+  "version": "1.0.0",
+  "description": "Scaffold, plan, track, and deploy coding projects — from idea to shipped app",
+  "author": {
+    "name": "u.web.dev",
+    "email": "u.web.dev@gmail.com"
+  },
+  "keywords": ["project", "scaffold", "planning", "deploy", "builder"]
+}

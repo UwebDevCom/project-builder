@@ -9,7 +9,10 @@ Registered in hooks/hooks.json under "SessionStart".
 from datetime import date, timedelta
 from pathlib import Path
 
-KNOWLEDGE_DIR = Path("knowledge")
+# Anchor knowledge/ to the plugin root (this file lives in <plugin>/scripts/),
+# not to the runtime cwd — hooks may run from any directory.
+PLUGIN_ROOT = Path(__file__).resolve().parent.parent
+KNOWLEDGE_DIR = PLUGIN_ROOT / "knowledge"
 MAX_INDEX_LINES = 200
 MAX_DAILY_LINES = 100
 

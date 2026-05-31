@@ -1,12 +1,12 @@
 {
-  "_comment": "Copy these hook entries into your project's .claude/settings.json under the 'hooks' key. Adjust paths if your plugin location differs.",
+  "_comment": "Hooks for the project-builder plugin. ${CLAUDE_PLUGIN_ROOT} expands to this plugin's install directory at runtime, so the paths resolve regardless of which subdirectory Claude was launched from.",
   "hooks": {
     "Stop": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "python .claude/plugins/project-builder/scripts/flush.py --trigger session-end",
+            "command": "python \"${CLAUDE_PLUGIN_ROOT}/scripts/flush.py\" --trigger session-end",
             "timeout": 30
           }
         ]
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python .claude/plugins/project-builder/scripts/flush.py --trigger pre-compact",
+            "command": "python \"${CLAUDE_PLUGIN_ROOT}/scripts/flush.py\" --trigger pre-compact",
             "timeout": 20
           }
         ]
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python .claude/plugins/project-builder/scripts/inject-context.py",
+            "command": "python \"${CLAUDE_PLUGIN_ROOT}/scripts/inject-context.py\"",
             "timeout": 10
           }
         ]

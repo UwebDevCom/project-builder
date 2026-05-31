@@ -12,7 +12,10 @@ import argparse
 from datetime import date, datetime
 from pathlib import Path
 
-KNOWLEDGE_DIR = Path("knowledge")
+# Anchor knowledge/ to the plugin root (this file lives in <plugin>/scripts/),
+# not to the runtime cwd — hooks may run from any directory.
+PLUGIN_ROOT = Path(__file__).resolve().parent.parent
+KNOWLEDGE_DIR = PLUGIN_ROOT / "knowledge"
 DAILY_DIR = KNOWLEDGE_DIR / "daily"
 
 
